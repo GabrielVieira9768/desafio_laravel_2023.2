@@ -11,7 +11,7 @@
         </div>
         <div class="card-footer">
             <button type="submit" form="form-adicionar" class="btn btn-warning font-weight-bold m-1 float-right">{{$button_name ?? 'Cadastrar'}}</button>
-            <a href="{{ route('users.index') }}" class="btn btn-warning font-weight-bold m-1 float-right">Cancelar</a>
+            <a href="{{ route('home') }}" class="btn btn-warning font-weight-bold m-1 float-right">Cancelar</a>
         </div>
     </div>
 </div>

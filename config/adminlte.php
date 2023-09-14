@@ -326,20 +326,20 @@ return [
             'icon'        => 'fas fa-fw fa-tachometer-alt',
         ],
         [
-            'text'      => 'Usuários',
-            'url'       => '/usuarios',
-            'icon'      => 'fas fa-fw fa-users',
+            'text'        => 'Usuários',
+            'url'         => '/usuarios',
+            'icon'        => 'fas fa-fw fa-users',
         ],
         [
-            'text' => 'Proprietários',
-            'url' => '/proprietarios',
-            'icon' => 'fas fa-fw fa-house-user',
+            'text'        => 'Proprietários',
+            'url'         => '/proprietarios',
+            'icon'        => 'fas fa-fw fa-house-user',
         ],
 
         [
             'text'        => 'Animais',
             'url'         => '/animais',
-            'icon'        => 'fas fa-fw fa-dog',
+            'icon'        => 'fas fa-fw fa-paw',
         ],
 
         [

@@ -2,9 +2,9 @@
 
 @section('content')
 
-    @component('admin.components.edit')
-        @slot('title', 'Editar Proprietário')
-        @slot('url', route('owners.update', $owner->id))
+    @component('admin.components.create')
+        @slot('title', 'Cadastrar Novo Proprietário')
+        @slot('url', route('owners.store'))
         @slot('form')
             @include('admin.owners.formulario')
         @endslot

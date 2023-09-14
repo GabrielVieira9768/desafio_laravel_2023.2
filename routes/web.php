@@ -40,6 +40,13 @@ Route::put('/users/{user}', [UserController::class, 'update'])->name('users.upda
 Route::delete('/usuarios/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 
 /* Rotas dos Proprietários */
+Route::get('/proprietarios', [OwnerController::class, 'index'])->name('owners.index');
+Route::get('/proprietarios/create', [OwnerController::class, 'create'])->name('owners.create');
+Route::get('/proprietarios/{owner}/edit', [OwnerController::class, 'edit'])->name('owners.edit');
+Route::get('/proprietarios/{owner}', [OwnerController::class, 'show'])->name('owners.show');
+Route::post('/owners', [OwnerController::class, 'store'])->name('owners.store');
+Route::put('/owners/{owner}', [OwnerController::class, 'update'])->name('owners.update');
+Route::delete('/proprietarios/{owner}', [OwnerController::class, 'destroy'])->name('owners.destroy');
 
 /* Rotas dos Animais */
 
