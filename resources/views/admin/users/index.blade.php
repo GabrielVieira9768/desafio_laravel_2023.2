@@ -16,7 +16,7 @@
                     <td class="text-center">{{ $user->email }}</td>
                     <td class="options d-flex justify-content-center gap-1">
                         <a href="{{ route('users.show', $user->id) }}" class="btn btn-warning font-weight-bold m-1">
-                            <i class="fas fa-search"></i>
+                            <i class="fas fa-user"></i>
                         </a>
                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning font-weight-bold m-1"><i class="fas fa-pen"></i></a>  
                         <form class="form-delete d-inline-block" action="{{ route('users.destroy', $user->id) }}" method="post">

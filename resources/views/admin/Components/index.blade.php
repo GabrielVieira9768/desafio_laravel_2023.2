@@ -8,7 +8,7 @@
                         <div class="input-group input-group-sm">
                             <a href="{{ $create }}">
                                 <button type="button" class="btn btn-primary icone-add-table">
-                                    <b><i class="fas fa-plus-circle"></i> Cadastrar</b>
+                                    <b><i class="fas fa-plus-square"></i> Cadastrar</b>
                                 </button>
                             </a>
                         </div>
