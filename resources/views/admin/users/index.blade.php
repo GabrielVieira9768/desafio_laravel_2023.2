@@ -1,5 +1,4 @@
 @extends('layouts.base')
-
 @section('content')
     @component('admin.components.index')
         @slot('create', route('users.create'))
