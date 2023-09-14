@@ -17,7 +17,7 @@
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="telefone" class="required">Telefone </label>
-        <input type="text" name="telefone" id="telefone" autofocus class="form-control" required value="{{ old('telefone', $user->telefone) }}">
+        <input type="text" name="telefone" id="telefone" autofocus class="form-control" placeholder="(99) 99999-9999" required value="{{ old('telefone', $user->telefone) }}">
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="endereco" class="required">Endereço </label>

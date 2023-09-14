@@ -2,12 +2,12 @@
     <div class="card mt-4">
         @if (isset($create) || isset($titulo))
             <div class="card-header card-outline cor-backend">
-                <h3 class="float-left m-0 table-title"><i class="{{ $icon ?? null }} mr-2"></i>{{ $titulo ?? null }}</h3>
+                <h3 class="float-left m-0 table-title font-weight-bold"><i class="{{ $icon ?? null }} mr-2"></i>{{ $titulo ?? null }}</h3>
                 @if (isset($create))
                     <div class="float-right mr-2">
                         <div class="input-group input-group-sm">
                             <a href="{{ $create }}">
-                                <button type="button" class="btn btn-info icone-add-table">
+                                <button type="button" class="btn btn-primary icone-add-table">
                                     <b><i class="fas fa-plus-circle"></i> Cadastrar</b>
                                 </button>
                             </a>
