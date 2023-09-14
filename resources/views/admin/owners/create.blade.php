@@ -11,3 +11,8 @@
     @endcomponent
 
 @endsection
+
+@section('js')
+    <script src="{{ asset('js/formulario-mascara/cpf-mascara.js') }}"></script>
+    <script src="{{ asset('js/formulario-mascara/telefone-mascara.js') }}"></script>
+@endsection
