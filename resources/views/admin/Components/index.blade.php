@@ -18,7 +18,7 @@
         @endif
 
         <div class="card-body table-responsive ">
-            <table  class="table table-hover table-striped" id="{{ $id ?? null }}">
+            <table  class="table table-hover" id="{{ $id ?? null }}">
                 <thead>
                     <tr>
                         {{ $head ?? null }}
