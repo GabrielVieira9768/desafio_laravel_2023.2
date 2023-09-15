@@ -7,6 +7,7 @@
         <label for="proprietario" class="required">Proprietário</label>
         <input type="text" name="proprietario" id="proprietario" autofocus class="form-control" required value="{{ old('owner_id', $animal->owner_id) }}">
     </div>
+    
     <div class="form-group col-sm-12 col-md-4">
         <label for="especie" class="required">Espécie</label>
         <input type="text" name="especie" id="especie" class="form-control" required value="{{ old('especie', $animal->especie) }}">
