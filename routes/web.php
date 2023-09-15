@@ -50,6 +50,13 @@ Route::put('/owners/{owner}', [OwnerController::class, 'update'])->name('owners.
 Route::delete('/proprietarios/{owner}', [OwnerController::class, 'destroy'])->name('owners.destroy');
 
 /* Rotas dos Animais */
+Route::get('/animais', [AnimalController::class, 'index'])->name('animals.index');
+Route::get('/animais/create', [AnimalController::class, 'create'])->name('animals.create');
+Route::get('/animais/{owner}/edit', [AnimalController::class, 'edit'])->name('animails.edit');
+Route::get('/animais/{owner}', [AnimalController::class, 'show'])->name('animals.show');
+Route::post('/animais', [AnimalController::class, 'store'])->name('animals.store');
+Route::put('/animais/{owner}', [AnimalController::class, 'update'])->name('animals.update');
+Route::delete('/animais/{owner}', [AnimalController::class, 'destroy'])->name('animals.destroy');
 
 /* Rotas das Consultas */
 Route::get('/consultas', [AppointmentController::class, 'index'])->name('appointments.index');

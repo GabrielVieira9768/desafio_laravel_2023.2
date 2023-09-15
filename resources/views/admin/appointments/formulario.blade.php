@@ -20,7 +20,7 @@
         <input type="text" name="custo" id="custo" autofocus class="form-control" placeholder="(99) 99999-9999" required value="{{ old('custo', $appointment->custo) }}">
     </div>
     <div class="form-group col-sm-12 col-md-4">
-        <label for="tratamento" class="required">Tratamento</label>
-        <input type="text" name="tratamento" id="tratamento" autofocus class="form-control" required value="{{ old('tratamento', $appointment->tratamento) }}">
+        <label for="tratamentos" class="required">Tratamento</label>
+        <input type="text" name="tratamentos" id="tratamentos" autofocus class="form-control" required value="{{ old('tratamentos', $appointment->tratamentos) }}">
     </div>
 </div>

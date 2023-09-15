@@ -12,7 +12,7 @@
         @slot('body')
             @foreach ($animals as $animal)
                 <tr>
-                    <td class="text-center">{{ $animal-id }}</td>
+                    <td class="text-center">{{ $animal->nome }}</td>
                     <td class="text-center">{{ $animal->owner_id }}</td>
                     <td class="options d-flex justify-content-center gap-1">
                         <a href="{{ route('animals.show', $animal->id) }}" class="btn btn-warning font-weight-bold m-1">
