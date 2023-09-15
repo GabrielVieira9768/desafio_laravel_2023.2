@@ -1,7 +1,7 @@
 <div class="row">
     <div class="form-group col-sm-12 col-md-4">
         <label for="nome" class="required">Nome</label>
-        <input type="text" name="nome" id="nome" autofocus class="form-control" required value="{{ old('nome', $owner->nome) }}">
+        <input type="text" name="nome" id="nome" autofocus class="form-control" required value="{{ old('nome', $animal->nome) }}">
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="proprietario" class="required">Proprietário</label>
@@ -17,7 +17,7 @@
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="raca" class="required">Raça</label>
-        <input type="date" name="raca" id="raca" class="form-control" required value="{{ old('raca', $animal->raca) }}">
+        <input type="text" name="raca" id="raca" class="form-control" required value="{{ old('raca', $animal->raca) }}">
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="tratamentos" class="required">Tratamentos</label>

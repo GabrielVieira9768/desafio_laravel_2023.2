@@ -26,11 +26,6 @@ Route::get('/', function () {
 
 /* Rotas teste - INÍCIO */
 
-/* Listas */
-Route::get('/gerenciamento-de-funcionarios', function () {
-    return view('/admin/users/index');
-});
-
 /* Rotas dos Usuários */
 Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
 Route::get('/usuarios/create', [UserController::class, 'create'])->name('users.create');
