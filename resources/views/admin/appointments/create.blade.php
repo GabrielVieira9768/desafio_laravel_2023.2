@@ -3,10 +3,10 @@
 @section('content')
 
     @component('admin.components.create')
-        @slot('title', 'Cadastrar Novo Proprietário')
-        @slot('url', route('owners.store'))
+        @slot('title', 'Agendar Nova Consulta')
+        @slot('url', route('appointments.store'))
         @slot('form')
-            @include('admin.owners.formulario')
+            @include('admin.appointments.formulario')
         @endslot
     @endcomponent
 

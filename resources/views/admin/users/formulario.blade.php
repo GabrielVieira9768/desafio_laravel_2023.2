@@ -27,8 +27,4 @@
         <label for="periodoTrabalho" class="required">Período de trabalho </label>
         <input type="text" name="periodoTrabalho" id="periodoTrabalho" class="form-control" required value="{{ old('periodoTrabalho', $user->periodoTrabalho) }}">
     </div>
-    <div class="form-group col-sm-12 col-md-4">
-        <label for="ehAdmin" class="required">Cargo </label>
-        <input type="text" name="ehAdmin" id="ehAdmin" autofocus class="form-control" required value="{{ old('ehAdmin', $user->ehAdmin) }}">
-    </div>
 </div>

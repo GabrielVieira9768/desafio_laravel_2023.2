@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 use App\http\Controllers\UserController;
 use App\http\Controllers\OwnerController;
@@ -51,6 +52,13 @@ Route::delete('/proprietarios/{owner}', [OwnerController::class, 'destroy'])->na
 /* Rotas dos Animais */
 
 /* Rotas das Consultas */
+Route::get('/consultas', [AppointmentController::class, 'index'])->name('appointments.index');
+Route::get('/consultas/create', [AppointmentController::class, 'create'])->name('appointments.create');
+Route::get('/consultas/{owner}/edit', [AppointmentController::class, 'edit'])->name('appointments.edit');
+Route::get('/consultas/{owner}', [AppointmentController::class, 'show'])->name('appointments.show');
+Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
+Route::put('/appointments/{owner}', [AppointmentController::class, 'update'])->name('appointments.update');
+Route::delete('/consultas/{owner}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 
 /* Rotas teste - FIM */
 

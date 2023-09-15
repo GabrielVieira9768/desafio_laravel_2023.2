@@ -8,7 +8,7 @@
                         <div class="input-group input-group-sm">
                             <a href="{{ $create }}">
                                 <button type="button" class="btn btn-primary icone-add-table">
-                                    <b><i class="fas fa-plus-square"></i> Cadastrar</b>
+                                    <b><i class="fas fa-plus-square"></i> Adicionar</b>
                                 </button>
                             </a>
                         </div>
@@ -28,7 +28,7 @@
                     @if($body != '')
                         {{ $body ?? null }}
                     @else
-                        <td>Nenhum item encontrado<td>
+                        <td>Nenhum cadastro encontrado<td>
                         <td></td>
                         <td></td>
                     @endif
@@ -39,12 +39,12 @@
         </div>
     </div>
 @else
-    <div class="text-center" style="color: purple">
-        <i class="fas fa-exclamation-circle" style="font-size: 10em"></i>
-        <p class="mb-4 h2">Nenhum item encontrado!</p>
+    <div class="text-center" style="color: orange">
+        <i class="fas fa-exclamation-circle" style="font-size: 7em"></i>
+        <p class="mb-4 h2">Nenhum cadastro encontrado!</p>
         <a href="{{ $create ?? '#' }}">
-            <button type="button" class="btn btn-info">
-                <b><i class="fas fa-plus-circle"></i> Adicionar novo item</b>
+            <button type="button" class="btn btn-primary">
+                <b><i class="fas fa-plus-circle"></i> Adicionar</b>
             </button>
         </a>
     </div>
