@@ -1,4 +1,4 @@
-<div class="col-md-10 offset-md-1 col-12 mt-4">
+<div class="col-md-10 offset-md-1 col-12 pt-4">
     <div class="card card-outline card-primary">
         <div class="card-header">
             <h3 class="card-title title-form font-weight-bold">{{ $title ?? null }} </h3>

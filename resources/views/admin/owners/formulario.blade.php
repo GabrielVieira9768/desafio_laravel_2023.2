@@ -23,8 +23,12 @@
         <label for="endereco" class="required">Endereço</label>
         <input type="text" name="endereco" id="endereco" autofocus class="form-control" required value="{{ old('endereco', $owner->endereco) }}">
     </div>
-    <div class="form-group col-sm-12 col-md-4">
+    <div class="form-group text-center">
         <label for="fotoPerfil">Foto de Perfil</label>
-        <input type="file" name="fotoPerfil" id="fotoPerfil" class="form-control-file">
+        @if($owner->fotoPerfil === null){
+            <input type="file" name="fotoPerfil" id="fotoPerfil" class="form-control-file">
+        }@else{
+            <img src="{{asset(/img/avatars/{$owner->fotoPerfil})}}" class="img-thumbnail" height="auto" width="150px">
+        }
     </div>
 </div>

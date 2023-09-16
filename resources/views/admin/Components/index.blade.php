@@ -39,9 +39,8 @@
         </div>
     </div>
 @else
-    <div class="text-center" style="color: orange">
-        <i class="fas fa-exclamation-circle" style="font-size: 7em"></i>
-        <p class="mb-4 h2">Nenhum cadastro encontrado!</p>
+    <div class="text-center" style="color: red">
+        <p class="mb-4 pt-4 h2">Nenhum cadastro encontrado!</p>
         <a href="{{ $create ?? '#' }}">
             <button type="button" class="btn btn-primary">
                 <b><i class="fas fa-plus-circle"></i> Adicionar</b>
