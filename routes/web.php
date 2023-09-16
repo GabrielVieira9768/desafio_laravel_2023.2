@@ -21,7 +21,7 @@ use App\http\Controllers\AppointmentController;
 */
 
 Route::get('/', function () {
-    return redirect(route('dashboard'));
+    return redirect(route('home'));
 });
 
 /* Rotas teste - INÍCIO */

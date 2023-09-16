@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('fotoPerfil')->nullable();
             $table->string('email')->unique();
-            $table->string('cpf')->unique();
+            $table->string('cpf')->unique()->numerify('###########');
             $table->date('dataNascimento');
             $table->string('endereco');
             $table->string('telefone');

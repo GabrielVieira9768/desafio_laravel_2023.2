@@ -26,6 +26,7 @@ class UserFactory extends Factory
             'dataNascimento' => fake()->date($format = 'Y-m-d', $max = 'now'),
             'endereco' => fake()->address(),
             'telefone' => fake()->phoneNumber(),
+            'periodoTrabalho' => "integral",
             'ehAdmin' => False,
             'remember_token' => Str::random(10),
         ];

@@ -5,9 +5,13 @@
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="proprietario" class="required">Proprietário</label>
-        <input type="text" name="proprietario" id="proprietario" autofocus class="form-control" required value="{{ old('owner_id', $animal->owner_id) }}">
+        <select class="form-control form-select form-select-sm" name="owner_id" id="owner_id" value="{{old('owner_id', $pet->owner->id ?? null )}}">
+            <option value="" hidden>Selecione aqui</option>
+            @foreach($owners as $owner)
+                <option value="{{$owner->id}}">{{$owner->id}} - {{$owner->nome}}</option>
+            @endforeach
+        </select>    
     </div>
-    
     <div class="form-group col-sm-12 col-md-4">
         <label for="especie" class="required">Espécie</label>
         <input type="text" name="especie" id="especie" class="form-control" required value="{{ old('especie', $animal->especie) }}">
@@ -19,9 +23,5 @@
     <div class="form-group col-sm-12 col-md-4">
         <label for="raca" class="required">Raça</label>
         <input type="text" name="raca" id="raca" class="form-control" required value="{{ old('raca', $animal->raca) }}">
-    </div>
-    <div class="form-group col-sm-12 col-md-4">
-        <label for="tratamentos" class="required">Tratamentos</label>
-        <input type="text" name="tratamentos" id="tratamentos" autofocus class="form-control" required value="{{ old('tratamentos', $animal->tratamentos) }}">
     </div>
 </div>

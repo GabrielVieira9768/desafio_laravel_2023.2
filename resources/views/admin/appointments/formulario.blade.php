@@ -1,11 +1,21 @@
 <div class="row">
     <div class="form-group col-sm-12 col-md-4">
-        <label for="funcionario" class="required">Funcionário</label>
-        <input type="text" name="funcionario" id="funcionario" autofocus class="form-control" required value="{{ old('user_id', $appointment->user_id) }}">
+        <label for="user_id">Funcionario</label>
+        <select class="form-control form-select form-select-sm" name="user_id" id="user_id" value="{{old('user_id', $appointment->user->id ?? null )}}">
+            <option value="" hidden>Selecione aqui</option>
+            @foreach ($users as $user)
+                <option value="{{ $user->id }}"> {{ $user->id }} - {{ $user->name }}</option>
+            @endforeach
+        </select>
     </div>
     <div class="form-group col-sm-12 col-md-4">
-        <label for="animal" class="required">Animal</label>
-        <input type="text" name="animal" id="animal" class="form-control" required value="{{ old('animal_id', $appointment->animal_id) }}">
+        <label for="animal_id">Animal</label>
+        <select class="form-control form-select form-select-sm" name="animal_id" id="animal_id" value="{{old('animal_id', $consultation->animal->id ?? null )}}">
+            <option value="" hidden>Selecione um animal</option>
+            @foreach ($animals as $animal)
+                <option value="{{ $animal->id }}"> {{ $animal->name }}</option>
+            @endforeach
+        </select>
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="dataInicio" class="required">Data de Início</label>

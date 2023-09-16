@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('dataNascimento');
             $table->string('endereco');
             $table->string('telefone');
-            $table->string('periodoTrabalho')->nullable();
+            $table->string('periodoTrabalho');
             $table->boolean('ehAdmin')->default(0);
             $table->rememberToken();
             $table->timestamps();

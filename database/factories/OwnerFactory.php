@@ -20,7 +20,7 @@ class OwnerFactory extends Factory
             'nome' => fake()->name(),
             'fotoPerfil' => null,
             'email' => fake()->email(),
-            'cpf' => fake()->text(),
+            'cpf' => fake()->unique()->numerify('#############'),
             'dataNascimento' => fake()->date($format = 'Y-m-d', $max = 'now'),
             'endereco' => fake()->address(),
             'telefone' => fake()->phoneNumber(),
