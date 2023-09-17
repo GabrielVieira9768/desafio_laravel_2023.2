@@ -9,6 +9,7 @@ use App\http\Controllers\OwnerController;
 use App\http\Controllers\AnimalController;
 use App\http\Controllers\AppointmentController;
 use App\http\Controllers\EmailController;
+use App\http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,7 @@ Route::get('/email', [EmailController::class, 'index'])->name('email.index');
 Route::post('/email', [EmailController::class, 'store'])->name('email.store');
 
 /* Rota do PDF */
+Route::get('/pdf', [PdfController::class, 'criaPdf'])->name('pdf.index');
 
 /* Rotas teste - FIM */
 

@@ -1,10 +1,10 @@
 <div class="row">
     <div class="form-group col-sm-12 col-md-4">
         <label for="user_id">Funcionario</label>
-        <select class="form-control form-select form-select-sm" name="user_id" id="user_id" required>
+        <select class="form-control form-select form-select-sm" name="user_id" id="user_id" required disabled>
             @foreach ($users as $user)
                 <option value="{{ $user->id }}" {{ old('user_id', $appointment->user_id) == $user->id ? 'selected' : '' }}>
-                    {{ $appointment->user_id }} - {{ $user->name }}
+                    {{ $appointment->user_id }} - {{ Auth::user()->name }}
                 </option>
             @endforeach
         </select>

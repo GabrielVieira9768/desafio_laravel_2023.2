@@ -3,21 +3,21 @@
 @section('title', 'Área Administrativa')
 
 @section('content_header')
-    <h1>Área Administrativa</h1>
+    <h1 class="font-weight-bold">Área Administrativa</h1>
 @stop
 
 @section('content')
     <div class="row card-header card-outline cor-backend" style="justify-content:center">
 
         <div class="col-lg-3 col-6">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('pdf.index') }}">
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>Relatório</h3>
                         <p>Gerar Relatório de Consultas</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                        <i class="far fa-id-badge"></i>
                     </div>
                 </div>
             </a>
@@ -31,7 +31,7 @@
                         <p>Mandar Email aos Proprietários</p>
                     </div>
                     <div class="icon">
-                    <i class="far fa-envelope"></i>
+                        <i class="far fa-envelope"></i>
                     </div>
                 </div>
             </a>
