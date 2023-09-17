@@ -8,6 +8,7 @@ use App\http\Controllers\UserController;
 use App\http\Controllers\OwnerController;
 use App\http\Controllers\AnimalController;
 use App\http\Controllers\AppointmentController;
+use App\http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------

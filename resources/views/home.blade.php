@@ -24,7 +24,7 @@
         </div>
 
         <div class="col-lg-3 col-6">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('email.index') }}">
                 <div class="small-box bg-primary">
                     <div class="inner">
                         <h3>Enviar Email</h3>

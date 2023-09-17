@@ -3,7 +3,7 @@
 @section('content')
     <div class="card mt-4">
         <div class="card-header">
-            <h5 class="card-title">Enviar Email aos Proprietários</h5>
+            <h5 class="card-title font-weight-bold">Enviar Email aos Proprietários</h5>
         </div>
         <div class="card-body">
             <form method="POST" action="{{ route('email.store') }}">
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="corpo" class="form-label">Corpo</label>
+                    <label for="corpo" class="form-label">Mensagem</label>
                     <textarea class="form-control" id="corpo" name="corpo" rows="3"></textarea>
                 </div>
 
@@ -29,8 +29,8 @@
                 </div>
 
                 <div class="card-footer d-flex justify-content-end">
-                    <button type="submit" class="btn btn-warning mr-2">Enviar</button>
-                    <a href="{{ route('home') }}" class="btn btn-warning">Cancelar</a>
+                    <button type="submit" class="btn btn-warning mr-2 font-weight-bold">Enviar</button>
+                    <a href="{{ route('home') }}" class="btn btn-warning font-weight-bold">Cancelar</a>
                 </div>
             </form>
         </div>

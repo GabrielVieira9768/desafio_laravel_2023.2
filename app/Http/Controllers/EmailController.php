@@ -12,7 +12,7 @@ class EmailController extends Controller
 {
     public function index()
     {
-        return view('mail.mensagem');
+        return view('admin.mail.mensagem');
     }
 
     public function store(Request $request)
