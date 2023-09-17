@@ -31,8 +31,8 @@ Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
 Route::get('/usuarios/create', [UserController::class, 'create'])->name('users.create');
 Route::get('/usuarios/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::get('/usuarios/{user}', [UserController::class, 'show'])->name('users.show');
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
-Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+Route::post('/usuarios', [UserController::class, 'store'])->name('users.store');
+Route::put('/usuarios/{user}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/usuarios/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 
 /* Rotas dos Proprietários */
@@ -47,20 +47,25 @@ Route::delete('/proprietarios/{owner}', [OwnerController::class, 'destroy'])->na
 /* Rotas dos Animais */
 Route::get('/animais', [AnimalController::class, 'index'])->name('animals.index');
 Route::get('/animais/create', [AnimalController::class, 'create'])->name('animals.create');
-Route::get('/animais/{owner}/edit', [AnimalController::class, 'edit'])->name('animails.edit');
-Route::get('/animais/{owner}', [AnimalController::class, 'show'])->name('animals.show');
+Route::get('/animais/{animal}/edit', [AnimalController::class, 'edit'])->name('animals.edit');
+Route::get('/animais/{animal}', [AnimalController::class, 'show'])->name('animals.show');
 Route::post('/animais', [AnimalController::class, 'store'])->name('animals.store');
-Route::put('/animais/{owner}', [AnimalController::class, 'update'])->name('animals.update');
-Route::delete('/animais/{owner}', [AnimalController::class, 'destroy'])->name('animals.destroy');
+Route::put('/animais/{animal}', [AnimalController::class, 'update'])->name('animals.update');
+Route::delete('/animais/{animal}', [AnimalController::class, 'destroy'])->name('animals.destroy');
 
 /* Rotas das Consultas */
 Route::get('/consultas', [AppointmentController::class, 'index'])->name('appointments.index');
 Route::get('/consultas/create', [AppointmentController::class, 'create'])->name('appointments.create');
-Route::get('/consultas/{owner}/edit', [AppointmentController::class, 'edit'])->name('appointments.edit');
-Route::get('/consultas/{owner}', [AppointmentController::class, 'show'])->name('appointments.show');
+Route::get('/consultas/{appointment}/edit', [AppointmentController::class, 'edit'])->name('appointments.edit');
+Route::get('/consultas/{appointment}', [AppointmentController::class, 'show'])->name('appointments.show');
 Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
-Route::put('/appointments/{owner}', [AppointmentController::class, 'update'])->name('appointments.update');
-Route::delete('/consultas/{owner}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
+Route::put('/appointments/{appointment}', [AppointmentController::class, 'update'])->name('appointments.update');
+Route::delete('/consultas/{appointment}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
+
+/* Rotas dos Emails */
+Route::get('/email', function () {
+    return redirect(route('email.mensagem'));
+});
 
 /* Rotas teste - FIM */
 

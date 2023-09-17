@@ -12,8 +12,8 @@
         @slot('body')
             @foreach ($appointments as $appointment)
                 <tr>
-                    <td class="text-center">{{ $appointment->user_id }}</td>
-                    <td class="text-center">{{ $appointment->animal_id }}</td>
+                    <td class="text-center">{{ $appointment->user_id}} - {{\App\Models\User::find($appointment->user_id)->name }}</td>
+                    <td class="text-center">{{ $appointment->animal_id}} - {{\App\Models\Animal::find($appointment->animal_id)->nome }}</td>
                     <td class="options d-flex justify-content-center gap-1">
                         <a href="{{ route('appointments.show', $appointment->id) }}" class="btn btn-warning font-weight-bold m-1">
                             <i class="fas fa-user"></i>

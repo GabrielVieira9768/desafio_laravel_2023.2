@@ -13,7 +13,7 @@
             @foreach ($animals as $animal)
                 <tr>
                     <td class="text-center">{{ $animal->nome }}</td>
-                    <td class="text-center">{{ $animal->owner_id }}</td>
+                    <td class="text-center">{{ $animal->owner_id}} - {{\App\Models\Owner::find($animal->owner_id)->nome }}</td>
                     <td class="options d-flex justify-content-center gap-1">
                         <a href="{{ route('animals.show', $animal->id) }}" class="btn btn-warning font-weight-bold m-1">
                             <i class="fas fa-user"></i>

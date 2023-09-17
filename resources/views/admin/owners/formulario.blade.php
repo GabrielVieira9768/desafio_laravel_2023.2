@@ -28,7 +28,7 @@
         @if($owner->fotoPerfil === null){
             <input type="file" name="fotoPerfil" id="fotoPerfil" class="form-control-file">
         }@else{
-            <img src="{{asset(/img/avatars/{$owner->fotoPerfil})}}" class="img-thumbnail" height="auto" width="150px">
+            <img src="{{asset(/storage/app/public/{$owner->fotoPerfil})}}" class="img-thumbnail" height="auto" width="150px">
         }
     </div>
 </div>

@@ -5,12 +5,14 @@
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="proprietario" class="required">Proprietário</label>
-        <select class="form-control form-select form-select-sm" name="owner_id" id="owner_id" value="{{old('owner_id', $pet->owner->id ?? null )}}">
-            <option value="" hidden>Selecione aqui</option>
-            @foreach($owners as $owner)
-                <option value="{{$owner->id}}">{{$owner->id}} - {{$owner->nome}}</option>
+        <select class="form-control form-select form-select-sm" name="owner_id" id="owner_id" value="{{old('owner_id', $animal->owner->id ?? null )}}">
+            @foreach ($owners as $owner)
+                <option value="{{ $owner->id }}" {{ old('owner_id', $animal->owner_id) == $owner->id ? 'selected' : '' }}>
+                    {{ $animal->owner_id }} - {{ $owner->nome }}
+                </option>
             @endforeach
-        </select>    
+        </select>
+        </select>
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="especie" class="required">Espécie</label>

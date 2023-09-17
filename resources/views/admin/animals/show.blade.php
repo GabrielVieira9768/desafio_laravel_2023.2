@@ -7,7 +7,7 @@
             @include('admin.animals.formulario')
         @endslot
         @slot('back')
-            <a href="{{ route('appointments.index') }}" class="btn btn-warning font-weight-bold m-1 float-right">Voltar</a>
+            <a href="{{ route('animals.index') }}" class="btn btn-warning font-weight-bold m-1 float-right">Voltar</a>
         @endslot
     @endcomponent
 @endsection

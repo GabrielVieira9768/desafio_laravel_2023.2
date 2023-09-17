@@ -1,19 +1,21 @@
 <div class="row">
     <div class="form-group col-sm-12 col-md-4">
         <label for="user_id">Funcionario</label>
-        <select class="form-control form-select form-select-sm" name="user_id" id="user_id" value="{{old('user_id', $appointment->user->id ?? null )}}">
-            <option value="" hidden>Selecione aqui</option>
+        <select class="form-control form-select form-select-sm" name="user_id" id="user_id" required>
             @foreach ($users as $user)
-                <option value="{{ $user->id }}"> {{ $user->id }} - {{ $user->name }}</option>
+                <option value="{{ $user->id }}" {{ old('user_id', $appointment->user_id) == $user->id ? 'selected' : '' }}>
+                    {{ $appointment->user_id }} - {{ $user->name }}
+                </option>
             @endforeach
         </select>
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="animal_id">Animal</label>
-        <select class="form-control form-select form-select-sm" name="animal_id" id="animal_id" value="{{old('animal_id', $consultation->animal->id ?? null )}}">
-            <option value="" hidden>Selecione um animal</option>
+        <select class="form-control form-select form-select-sm" name="animal_id" id="animal_id" required>
             @foreach ($animals as $animal)
-                <option value="{{ $animal->id }}"> {{ $animal->name }}</option>
+                <option value="{{ $animal->id }}" {{ old('animal_id', $appointment->animal_id) == $animal->id ? 'selected' : '' }}>
+                    {{ $appointment->animal_id }} - {{ $animal->nome }}
+                </option>
             @endforeach
         </select>
     </div>
