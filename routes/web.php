@@ -20,11 +20,13 @@ use App\http\Controllers\AppointmentController;
 |
 */
 
+/* Rotas teste - INÍCIO */
+
+/* Rota da Home */
 Route::get('/', function () {
     return redirect(route('home'));
 });
-
-/* Rotas teste - INÍCIO */
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /* Rotas dos Usuários */
 Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
@@ -63,9 +65,10 @@ Route::put('/appointments/{appointment}', [AppointmentController::class, 'update
 Route::delete('/consultas/{appointment}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 
 /* Rotas dos Emails */
-Route::get('/email', function () {
-    return redirect(route('email.mensagem'));
-});
+Route::get('/email', [EmailController::class, 'index'])->name('email.index');
+Route::post('/email', [EmailController::class, 'store'])->name('email.store');
+
+/* Rota do PDF */
 
 /* Rotas teste - FIM */
 
@@ -82,5 +85,3 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
