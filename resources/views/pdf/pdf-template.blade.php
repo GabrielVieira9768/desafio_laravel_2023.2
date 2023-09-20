@@ -49,18 +49,18 @@
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">Animal</th>
-                <th scope="col">Proprietário</th>
-                <th scope="col">Tratamento</th>
-                <th scope="col">Data e hora da Consulta</th>
+                <th scope="col" class="text-center">Animal</th>
+                <th scope="col" class="text-center">Proprietário</th>
+                <th scope="col" class="text-center">Tratamento</th>
+                <th scope="col" class="text-center">Data e hora da Consulta</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
                 <tr>
-                <td>{{ $appointment->animal_id}} - {{\App\Models\Animal::find($appointment->animal_id)->nome }}</td>
-                <td>{{ $appointment->animal->owner->nome }}</td>
-                <td>{{ $appointment->tratamentos }}</td>
-                <td>{{ $appointment->dataInicio }}</td>
+                <td class="text-center">{{ $appointment->animal_id}} - {{\App\Models\Animal::find($appointment->animal_id)->nome }}</td>
+                <td class="text-center">{{ \App\Models\owner::find(\App\Models\Animal::find($appointment->animal_id)->owner_id)->nome }}</td>
+                <td class="text-center">{{ $appointment->tratamentos }}</td>
+                <td class="text-center">{{ $appointment->dataInicio }}</td>
                 </tr>
             </tbody>
         </table>

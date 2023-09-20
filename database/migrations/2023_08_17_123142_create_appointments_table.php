@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('user_id')->constrained('users');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
 
-            $table->integer('animal_id')->constrained('animals');
+            $table->integer('animal_id')->unsigned();
+            $table->foreign('animal_id')->references('id')->on('animals');
 
             $table->dateTime('dataInicio');
             $table->dateTime('dataTermino');

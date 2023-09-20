@@ -1,35 +1,33 @@
 <div class="row">
     <div class="form-group col-sm-12 col-md-4">
         <label for="user_id">Funcionario</label>
-        <select class="form-control form-select form-select-sm" name="user_id" id="user_id" required disabled>
-            @foreach ($users as $user)
-                <option value="{{ $user->id }}" {{ old('user_id', $appointment->user_id) == $user->id ? 'selected' : '' }}>
-                    {{ $appointment->user_id }} - {{ Auth::user()->name }}
+        <select class="form-control form-select form-select-sm" name="user_id" id="user_id" required readonly value="{{old('user_id', $appointment->user->id ?? null )}}">
+                <option value="{{ Auth::user()->id }}">
+                    {{ Auth::user()->id }} - {{ Auth::user()->name }}
                 </option>
-            @endforeach
         </select>
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="animal_id">Animal</label>
-        <select class="form-control form-select form-select-sm" name="animal_id" id="animal_id" required>
+        <select class="form-control form-select form-select-sm" name="animal_id" id="animal_id" required value="{{old('animal_id', $appointment->animal_id ?? null )}}">
             @foreach ($animals as $animal)
                 <option value="{{ $animal->id }}" {{ old('animal_id', $appointment->animal_id) == $animal->id ? 'selected' : '' }}>
-                    {{ $appointment->animal_id }} - {{ $animal->nome }}
+                    {{ $animal->id }} - {{ $animal->nome }}
                 </option>
             @endforeach
         </select>
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="dataInicio" class="required">Data de Início</label>
-        <input type="date" name="dataInicio" id="dataInicio" class="form-control" required value="{{ old('dataInicio', $appointment->dataInicio) }}">
+        <input type="datetime-local" name="dataInicio" id="dataInicio" class="form-control" required value="{{ old('dataInicio', $appointment->dataInicio) }}">
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="dataTermino" class="required">Data de Término</label>
-        <input type="date" name="dataTermino" id="dataTermino" class="form-control" required value="{{ old('dataTermino', $appointment->dataTermino) }}">
+        <input type="datetime-local" name="dataTermino" id="dataTermino" class="form-control" required value="{{ old('dataTermino', $appointment->dataTermino) }}">
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="custo" class="required">Preço</label>
-        <input type="text" name="custo" id="custo" autofocus class="form-control" placeholder="(99) 99999-9999" required value="{{ old('custo', $appointment->custo) }}">
+        <input type="text" name="custo" id="custo" autofocus class="form-control" required value="{{ old('custo', $appointment->custo) }}">
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="tratamentos" class="required">Tratamento</label>
