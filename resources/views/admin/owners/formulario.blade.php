@@ -9,7 +9,7 @@
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="cpf" class="required">CPF</label>
-        <input type="text" name="cpf" id="cpf" class="form-control" required value="{{ old('cpf', $owner->cpf) }}">
+        <input type="text" name="cpf" id="cpf" class="form-control" placeholder="" required value="{{ old('cpf', $owner->cpf) }}">
     </div>
     <div class="form-group col-sm-12 col-md-4">
         <label for="dataNascimento" class="required">Data de Nascimento</label>
@@ -28,7 +28,7 @@
         @if($owner->fotoPerfil === null){
             <input type="file" name="fotoPerfil" id="fotoPerfil" class="form-control-file">
         }@else{
-            <img src="{{asset(/storage/app/public/{$owner->fotoPerfil})}}" class="img-thumbnail" height="auto" width="150px">
+            <img src="{{ asset(storage/app/public/{{ $owner->fotoPerfil }}) }}" class="img-thumbnail" height="auto" width="150px">
         }
     </div>
 </div>

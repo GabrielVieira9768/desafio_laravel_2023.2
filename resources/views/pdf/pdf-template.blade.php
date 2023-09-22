@@ -28,23 +28,23 @@
         }
 
         th, td {
-            border: 1px solid #ccc;
+            border: 1px solid black;
             padding: 10px;
             text-align: left;
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #D9EAFE;
         }
     </style>
 </head>
 <body>
     <h1>Relatório de Consultas</h1>
-    <h3>Funcionario: {{ Auth::user()->name }}  </h3>
+    <h3>Funcionário: {{ Auth::user()->name }}  </h3>
     <h3>Data e Hora de Emissão: {{ now()->format('d/m/Y H:i:s') }} </h3>
 
     @foreach($appointments as $appointment)
-        <h2>Mês: {{ (new DateTime($appointment->dataInicio))->format('F') }} </h2>
+        <p><strong>Mês:</strong> {{ (new DateTime($appointment->dataInicio))->format('F') }} </p>
 
         <table class="table">
             <thead>
@@ -58,7 +58,7 @@
             <tbody class="table-group-divider">
                 <tr>
                 <td class="text-center">{{ $appointment->animal_id}} - {{\App\Models\Animal::find($appointment->animal_id)->nome }}</td>
-                <td class="text-center">{{ \App\Models\owner::find(\App\Models\Animal::find($appointment->animal_id)->owner_id)->nome }}</td>
+                <td class="text-center">{{ \App\Models\Animal::find($appointment->animal_id)->owner_id }} - {{ \App\Models\owner::find(\App\Models\Animal::find($appointment->animal_id)->owner_id)->nome }}</td>
                 <td class="text-center">{{ $appointment->tratamentos }}</td>
                 <td class="text-center">{{ $appointment->dataInicio }}</td>
                 </tr>

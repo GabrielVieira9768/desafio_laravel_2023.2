@@ -7,9 +7,9 @@
         <label for="proprietario" class="required">Proprietário</label>
         <select class="form-control form-select form-select-sm" name="owner_id" id="owner_id" value="{{old('owner_id', $animal->owner->id ?? null )}}">
             @foreach ($owners as $owner)
-                <option value="{{ $owner->id }}" {{ old('owner_id', $animal->owner_id) == $owner->id ? 'selected' : '' }}>
-                    {{ $owner->id }} - {{ $owner->nome }}
-                </option>
+            <option value="{{ $owner->id }}" {{ old('owner_id', $animal->owner_id) == $owner->id ? 'selected' : '' }}>
+                {{ $owner->id }} - {{ $owner->nome }}
+            </option>
             @endforeach
         </select>
         </select>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Animal;
 use App\Models\Owner;
+use App\Models\Appointment;
 
 class AnimalController extends Controller
 {
@@ -21,7 +22,8 @@ class AnimalController extends Controller
     {
         $owners = Owner::all();
         $animal = new animal();
-        return view ('admin.animals.create', compact('animal', 'owners'));
+        $appointments = Appointment::all();
+        return view ('admin.animals.create', compact('animal', 'owners', 'appointments'));
     }
 
     /**
@@ -42,7 +44,8 @@ class AnimalController extends Controller
     public function show(animal $animal)
     {
         $owners = Owner::all();
-        return view ('admin.animals.show', compact('animal', 'owners'));
+        $appointments = Appointment::all();
+        return view ('admin.animals.show', compact('animal', 'owners', 'appointments'));
     }
 
     /**
@@ -51,7 +54,8 @@ class AnimalController extends Controller
     public function edit(animal $animal)
     {
         $owners = Owner::all();
-        return view ('admin.animals.edit', compact('animal', 'owners'));
+        $appointments = Appointment::all();
+        return view ('admin.animals.edit', compact('animal', 'owners', 'appointments'));
     }
 
     /**

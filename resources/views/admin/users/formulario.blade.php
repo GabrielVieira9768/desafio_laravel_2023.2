@@ -26,15 +26,7 @@
     <div class="form-group col-sm-12 col-md-4">
         <label for="periodoTrabalho" class="required">Período de trabalho</label>
         <select name="periodoTrabalho" class="form-control">
-            <option value="
-                <?php if($user->periodoTrabalho === null)
-                    echo "Integral";
-                    else
-                    echo $user->periodoTrabalho;
-                ?>"></option>
-            <option>Tarde</option>
-            <option>Manhã</option>
-            <option>Noite</option>
+            <option value="{{ old('periodoTrabalho', $user->periodoTrabalho) }}"></option>
         </select>
     </div>
 </div>

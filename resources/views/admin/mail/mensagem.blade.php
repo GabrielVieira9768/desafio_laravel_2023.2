@@ -15,17 +15,17 @@
                 
                 <div class="mb-3">
                     <label for="saudacoes" class="form-label">Saudações</label>
-                    <textarea class="form-control" id="saudacoes" name="saudacoes" rows="3"></textarea>
+                    <textarea class="form-control" id="saudacoes" name="saudacoes" style="resize: none" rows="1"></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="corpo" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="corpo" name="corpo" rows="3"></textarea>
+                    <textarea class="form-control" id="corpo" name="corpo" style="resize: none" rows="7"></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="agradecimentos" class="form-label">Agradecimentos</label>
-                    <textarea class="form-control" id="agradecimentos" name="agradecimentos" rows="3"></textarea>
+                    <textarea class="form-control" id="agradecimentos" name="agradecimentos" style="resize: none" rows="1"></textarea>
                 </div>
 
                 <div class="card-footer d-flex justify-content-end">
