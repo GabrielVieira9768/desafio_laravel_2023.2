@@ -21,7 +21,6 @@ return new class extends Migration
             $table->integer('owner_id')->unsigned();
             $table->foreign('owner_id')->references('id')->on('owners');
             
-            $table->string('tratamentos')->nullable();
             $table->timestamps();
         });
     }

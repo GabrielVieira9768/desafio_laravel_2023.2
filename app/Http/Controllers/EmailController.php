@@ -19,15 +19,15 @@ class EmailController extends Controller
     {
         $request->validate([
             'assunto' => 'required|string|max:255',
-            'saudacoes' => 'required|string',
-            'corpo' => 'required|string|max:255',
+            'saudacoes' => 'required|string|max:255',
+            'corpo' => 'required|string',
             'agradecimentos' => 'required|string|max:255',
         ]);
 
         $owners = Owner::all();
         foreach ($owners as $indice => $owner) {
             $multiplicador = $indice + 1;
-            $when = now()->addSecond($multiplicador * 5);
+            $when = now()->addSecond($multiplicador * 15);
             Mail::to($owner->email)->later($when, new \App\Mail\EmailProprietarios($request->assunto, $request->saudacoes, $request->corpo, $request->agradecimentos));
         }
 

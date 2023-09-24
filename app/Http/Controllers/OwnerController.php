@@ -28,6 +28,16 @@ class OwnerController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        if ($request->hasFile('fotoPerfil')) {
+            $file = $request->file('fotoPerfil');
+            $file->store('public/storage/fotosPerfil');
+            $data['fotoPerfil'] = $file->hashName();
+          }
+          else {
+              $data['fotoPerfil'] = null;
+          }
+
         Owner::create($data);
         
         return redirect()->route('owners.index')->with('success', true);
