@@ -33,10 +33,10 @@ class OwnerController extends Controller
             $file = $request->file('fotoPerfil');
             $file->store('public/storage/fotosPerfil');
             $data['fotoPerfil'] = $file->hashName();
-          }
-          else {
-              $data['fotoPerfil'] = null;
-          }
+        }
+        else {
+            $data['fotoPerfil'] = null;
+        }
 
         Owner::create($data);
         
@@ -65,6 +65,16 @@ class OwnerController extends Controller
     public function update(Request $request, Owner $owner)
     {
         $data = $request->all();
+
+        if ($request->hasFile('fotoPerfil')) {
+            $file = $request->file('fotoPerfil');
+            $file->store('public/storage/fotosPerfil');
+            $data['fotoPerfil'] = $file->hashName();
+        }
+        else {
+            $data['fotoPerfil'] = null;
+        }
+
         $owner->update($data);
 
         return redirect()->route('owners.index')->with('success', true);

@@ -10,7 +10,7 @@
     <div class="row card-header card-outline cor-backend" style="justify-content:center">
 
         <div class="col-lg-3 col-6">
-            <a href="{{ route('pdf.index') }}">
+            <a href="{{ route('pdf.index') }}" target="_blank">
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>Relatório</h3>

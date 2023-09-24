@@ -9,14 +9,17 @@ use App\Models\Appointment;
 
 class PdfController extends Controller
 {
-    public function criaPdf(){
-    
+    public function criaPdf()
+    {
         $funcionario = Auth::user()->id;
         $dataHora = now()->format('d/m/Y H:i:s');
-        $appointments = Appointment::all();
+
+        // Altere a consulta para ordenar as consultas por ano e mês em ordem decrescente
+        $appointments = Appointment::orderBy('dataInicio', 'desc')->get();
 
         $pdf = Pdf::loadView('pdf.pdf-template', compact('appointments', 'funcionario', 'dataHora'));
 
         return $pdf->setPaper('A4')->stream('relatorioConsultas');
     }
 }
+
