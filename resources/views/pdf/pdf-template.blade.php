@@ -58,9 +58,12 @@
     
     // Formate o nome do mês em português e capitalize a primeira letra
     $nomeMes = ucfirst(strftime('%B', $dataInicio->getTimestamp()));
+
+    // Obtenha o ano
+    $ano = $dataInicio->format('Y');
     ?>
     
-    <p><strong> <?php echo $nomeMes; ?></strong></p>
+    <p><strong><?php echo $ano . ' - ' . $nomeMes; ?></strong></p>
     
 
     <table class="table">
