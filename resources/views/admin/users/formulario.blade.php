@@ -26,7 +26,13 @@
     <div class="form-group col-sm-12 col-md-4">
         <label for="periodoTrabalho" class="required">Período de trabalho</label>
         <select name="periodoTrabalho" class="form-control">
-            <option value="{{ old('periodoTrabalho', $user->periodoTrabalho) }}"></option>
+            @if($user->periodoTrabalho !== null)
+            <option value="{{ old('periodoTrabalho', $user->periodoTrabalho) }}">{{ $user->periodoTrabalho }}</option>
+            @endif
+            <option>Integral</option>
+            <option>Matutino</option>
+            <option>Vespertino</option>
+            <option>Noturno</option>
         </select>
     </div>
 </div>
