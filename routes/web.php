@@ -27,17 +27,20 @@ use App\http\Controllers\PdfController;
 /* Rota da Home */
 Route::get('/', function () {
     return redirect(route('home'));
-});
+})->middleware(['auth', 'verified'])->name('home');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Verifica se está logado
+Route::middleware('auth')->group(function () {
 /* Rotas dos Usuários */
-Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
-Route::get('/usuarios/create', [UserController::class, 'create'])->name('users.create');
-Route::get('/usuarios/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::get('/usuarios/{user}', [UserController::class, 'show'])->name('users.show');
-Route::post('/usuarios', [UserController::class, 'store'])->name('users.store');
-Route::put('/usuarios/{user}', [UserController::class, 'update'])->name('users.update');
-Route::delete('/usuarios/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::get('/usuarios', [UserController::class, 'index'])->name('users.index')->can('ehAdmin', '\App\Models\User');
+Route::get('/usuarios/create', [UserController::class, 'create'])->name('users.create')->can('ehAdmin', '\App\Models\User');
+Route::get('/usuarios/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->can('ehAdmin', '\App\Models\User');
+Route::get('/usuarios/{user}', [UserController::class, 'show'])->name('users.show')->can('ehAdmin', '\App\Models\User');
+Route::post('/usuarios', [UserController::class, 'store'])->name('users.store')->can('ehAdmin', '\App\Models\User');
+Route::put('/usuarios/{user}', [UserController::class, 'update'])->name('users.update')->can('ehAdmin', '\App\Models\User');
+Route::delete('/usuarios/{user}', [UserController::class, 'destroy'])->name('users.destroy')->can('ehAdmin', '\App\Models\User');
 
 /* Rotas dos Proprietários */
 Route::get('/proprietarios', [OwnerController::class, 'index'])->name('owners.index');
@@ -75,15 +78,11 @@ Route::get('/pdf', [PdfController::class, 'criaPdf'])->name('pdf.index');
 
 /* Rotas teste - FIM */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+// Termina verificação de login
 
 require __DIR__.'/auth.php';
 

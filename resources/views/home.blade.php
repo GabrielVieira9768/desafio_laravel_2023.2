@@ -22,7 +22,7 @@
                 </div>
             </a>
         </div>
-
+        @can('ehAdmin', '\App\Models\User')
         <div class="col-lg-3 col-6">
             <a href="{{ route('email.index') }}">
                 <div class="small-box bg-primary">
@@ -36,6 +36,7 @@
                 </div>
             </a>
         </div>
+        @endcan
 
     </div>
 @stop

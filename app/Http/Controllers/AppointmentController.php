@@ -16,9 +16,6 @@ class AppointmentController extends Controller
         return view ('admin.appointments.index', compact('appointments'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $users = User::all();
@@ -27,9 +24,6 @@ class AppointmentController extends Controller
         return view ('admin.appointments.create', compact('appointment', 'users', 'animals'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $data = $request->all();
@@ -38,9 +32,6 @@ class AppointmentController extends Controller
         return redirect()->route('appointments.index')->with('success', true);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(appointment $appointment)
     {
         $users = User::all();
@@ -48,9 +39,6 @@ class AppointmentController extends Controller
         return view ('admin.appointments.show', compact('appointment', 'users', 'animals'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(appointment $appointment)
     {
         $users = User::all();
@@ -58,9 +46,6 @@ class AppointmentController extends Controller
         return view ('admin.appointments.edit', compact('appointment', 'users', 'animals'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, appointment $appointment)
     {
         $data = $request->all();
@@ -69,9 +54,6 @@ class AppointmentController extends Controller
         return redirect()->route('appointments.index')->with('success', true);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(appointment $appointment)
     {
         $appointment->delete();

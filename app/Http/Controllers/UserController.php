@@ -13,14 +13,12 @@ class UserController extends Controller
         return view ('admin.users.index', compact('users'));
     }
 
-    /* Criar */
     public function create()
     {
         $user = new User();
         return view ('admin.users.create', compact('user'));
     }
 
-    /* Store */
     public function store(Request $request)
     {
         $data = $request->all();
@@ -29,19 +27,16 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', true);
     }
 
-    /* Show */
     public function show(User $user)
     {
         return view ('admin.users.show', compact('user'));
     }
 
-    /* Edite */
     public function edit(User $user)
     {
         return view ('admin.users.edit', compact('user'));
     }
 
-    /* Update */
     public function update(Request $request, User $user)
     {
         $data = $request->all();
@@ -50,7 +45,6 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', true);
     }
 
-    /* Delete */
     public function destroy(User $user)
     {
         $user->delete();
