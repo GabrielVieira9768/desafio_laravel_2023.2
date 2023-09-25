@@ -43,7 +43,7 @@ class EmailProprietarios extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'admin.mail.mensagem',
+            view: 'mail.view-email',
         );
     }
 
@@ -55,10 +55,5 @@ class EmailProprietarios extends Mailable
     public function attachments(): array
     {
         return [];
-    }
-
-    public function build()
-    {
-        return  $this->subject($this->assunto)->view('admin.mail.mensagem'); 
     }
 }

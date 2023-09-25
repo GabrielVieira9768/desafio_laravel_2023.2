@@ -12,7 +12,7 @@
         @slot('body')
             @foreach ($owners as $owner)
                 <tr>
-                    <td class="text-center">{{ $owner->nome }}</td>
+                    <td class="text-center">{{ $owner->id }} - {{ $owner->nome }}</td>
                     <td class="text-center">{{ $owner->email }}</td>
                     <td class="options d-flex justify-content-center gap-1">
                         <a href="{{ route('owners.show', $owner->id) }}" class="btn btn-warning font-weight-bold m-1">

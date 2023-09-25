@@ -7,30 +7,26 @@ use Illuminate\Http\Request;
 use App\Models\Owner;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EmailProprietarios;
+use Illuminate\Support\Facades\Auth;
 
 class EmailController extends Controller
 {
     public function index()
     {
-        return view('admin.mail.mensagem');
+        return view('mail.mensagem');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'assunto' => 'required|string|max:255',
-            'saudacoes' => 'required|string|max:255',
-            'corpo' => 'required|string',
-            'agradecimentos' => 'required|string|max:255',
-        ]);
-
         $owners = Owner::all();
-        foreach ($owners as $indice => $owner) {
+
+        foreach($owners as $indice => $owner){
             $multiplicador = $indice + 1;
-            $when = now()->addSecond($multiplicador * 15);
-            Mail::to($owner->email)->later($when, new \App\Mail\EmailProprietarios($request->assunto, $request->saudacoes, $request->corpo, $request->agradecimentos));
+            $email = new EmailProprietarios($request->input('assunto'), $request->saudacoes, $request->corpo, $request->agradecimentos);
+            $when = now()->addSeconds($multiplicador * 5);
+            Mail::to($owner)->later($when, $email);
         }
 
-        return redirect()->route('email.store')->with('success', 'A mensagem foi enviada com sucesso!');
+        return redirect()->route('email.index')->with('success', 'A mensagem foi enviada com sucesso!');
     }
 }
