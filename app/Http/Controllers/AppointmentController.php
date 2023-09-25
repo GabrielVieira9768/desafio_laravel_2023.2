@@ -27,6 +27,16 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $appointments = appointment::all();
+
+        foreach($appointments as $appointment){
+            if($request->dataInicio >= $appointment->dataInicio && $request->dataInicio < $appointment->dataTermino){
+                return back()->with('message-error', 'Horário ocupado!');
+            }else if($request->dataInicio <= $appointment->dataInicio && $request->dataTermino > $appointment->dataInicio){
+                return back()->with('message-error', 'Horário ocupado!');
+            }
+        }
+
         appointment::create($data);
 
         return redirect()->route('appointments.index')->with('success', true);
