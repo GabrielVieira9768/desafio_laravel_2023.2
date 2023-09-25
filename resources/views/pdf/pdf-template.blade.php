@@ -23,6 +23,10 @@
             text-decoration: none;
         }
 
+        .cabecalho {
+            margin-bottom: 30px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -31,7 +35,7 @@
         th,
         td {
             border: 1px solid black;
-            padding: 10px;
+            padding: 5px;
             text-align: center;
         }
 
@@ -43,10 +47,10 @@
 
 <body>
     <h1>Relatório de Consultas</h1>
-    <h3>Funcionário: {{ Auth::user()->name }} </h3>
-    <h3>Data e Hora de Emissão: {{ now()->setTimezone('America/Sao_Paulo')->format('d/m/Y H:i:s') }}</h3>
-
-
+    <div class="cabecalho">
+        <h3>Funcionário: {{ Auth::user()->name }} </h3>
+        <h3>Data e Hora de Emissão: {{ now()->setTimezone('America/Sao_Paulo')->format('d/m/Y H:i:s') }}</h3>
+    </div>
 
     @foreach($appointments as $appointment)
     <?php
